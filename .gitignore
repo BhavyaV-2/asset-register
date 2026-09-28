@@ -7,3 +7,7 @@ __pycache__/
 *.zip
 .local/
 *.log
+.vercel/
+server/scripts/check_local.py
+server/scripts/run_local.py
+server/scripts/prepare_local.py

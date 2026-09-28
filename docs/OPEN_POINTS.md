@@ -14,3 +14,8 @@
 - Equal warranty end dates — choose the newest contract ID — the documents do not choose between ties — Pravi.
 - Second picture — save the change flow as a second SVG — SVG has no document pages — judges.
 - Database test runtime — PostgreSQL 16 and PostGIS in local Ubuntu — Docker was installed without usable integration here — operator.
+- Contract areas — one area per contract request — prevents requests exposing other areas' asset IDs — Pravi.
+- Low-zoom counts — saved in the same database and updated with asset changes — the first 200,000-row run missed the 300 ms map target — judges.
+- Load measurements — fixed-seed sequential local requests with empty-map counts reported — repeatable evidence without implying tested concurrent capacity — judges.
+- Bucket photos — standard S3 signed requests without an extra package — no client library was specified — operator.
+- Local setup — generate random values in ignored environment files — avoids committed passwords and another environment-file package — operator.
