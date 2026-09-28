@@ -16,7 +16,7 @@ def report_problem(asset_id:str,body:dict,user=Depends(need_role('editor','admin
         raise HTTPException(400,'Describe the problem and choose its urgency.')
     with db.transaction() as conn:
         asset = check_asset(conn,user,asset_id,True)
-        contract = conn.execute('SELECT c.* FROM contract c JOIN contract_asset ca ON ca.contract_id=c.id WHERE ca.asset_id=%s AND c.warranty_months>0 AND c.completion_date<=%s AND c.warranty_end_date>=%s ORDER BY c.warranty_end_date DESC LIMIT 1',(asset_id,today(),today())).fetchone()
+        contract = conn.execute('SELECT c.* FROM contract c JOIN contract_asset ca ON ca.contract_id=c.id WHERE ca.asset_id=%s AND c.warranty_months>0 AND c.completion_date<=%s AND c.warranty_end_date>=%s ORDER BY c.warranty_end_date DESC,c.id DESC LIMIT 1',(asset_id,today(),today())).fetchone()
         row = conn.execute('INSERT INTO problem_report(asset_id,reported_by,description,urgency,under_warranty,contract_id) VALUES (%s,%s,%s,%s,%s,%s) RETURNING *',(asset_id,user['id'],body['description'],body['urgency'],bool(contract),contract['id'] if contract else None)).fetchone()
         conn.execute('UPDATE asset SET open_problem_count=open_problem_count+1 WHERE id=%s',(asset_id,))
         if contract:

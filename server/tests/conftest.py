@@ -12,6 +12,23 @@ def safe_database():
 @pytest.fixture(scope='session')
 def client():
     with TestClient(app) as current:
+        # Give read-route tests one approved record even on a fresh test database.
+        from app import database as db
+        from app.imports.compare import process_import
+        from app.imports.routes import start_batch
+        from app.review import decide_request
+        from psycopg.types.json import Jsonb
+        import uuid
+        if not db.one('SELECT id FROM asset LIMIT 1'):
+            editor=db.one("SELECT u.*,a.path AS area_path FROM app_user u JOIN area a ON a.id=u.area_id WHERE role='editor'")
+            reviewer=db.one("SELECT u.*,a.path AS area_path FROM app_user u JOIN area a ON a.id=u.area_id WHERE role='reviewer'")
+            area=db.one("SELECT id FROM area WHERE name='Sector 3'")['id']
+            with db.transaction() as conn:
+                system=conn.execute("INSERT INTO department_system(name,department_name,connection,default_area_id,column_mapping) VALUES (%s,'Sample','file',%s,%s) RETURNING id",('Test '+uuid.uuid4().hex,area,Jsonb({'source_id':'id','name':'name','asset_type':{'fixed':'street_light'},'location':{'latitude':'lat','longitude':'lon'}}))).fetchone()['id']
+            batch=start_batch(editor,system,'sample.csv')
+            process_import(batch['id'],'sample.csv',b'id,name,lat,lon\n1,Sample light,23.25,72.68',editor)
+            request=db.one('SELECT id FROM change_request WHERE batch_id=%s',(batch['id'],))
+            decide_request(request['id'],{},reviewer)
         yield current
 
 @pytest.fixture
