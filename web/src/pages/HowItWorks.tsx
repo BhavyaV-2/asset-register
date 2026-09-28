@@ -1,0 +1,3 @@
+import {text} from '../text';
+import {Heading} from '../common';
+export default function HowItWorks(){return <><Heading title={text.howTitle} subtitle={text.howSubtitle}/><section className="panel"><img className="diagram" src="/architecture-diagram.svg" alt={text.diagramAlt}/><ol className="explanation">{text.howLines.map(line=><li key={line}>{line}</li>)}</ol></section><section className="panel"><img className="diagram" src="/change-flow.svg" alt={text.flowAlt}/></section><section className="panel"><h2>{text.growthTitle}</h2><p>{text.growthIntro}</p><ol className="explanation">{text.growthSteps.map(line=><li key={line}>{line}</li>)}</ol><p>{text.loadPending}</p></section></>}
