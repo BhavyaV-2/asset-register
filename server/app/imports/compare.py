@@ -31,8 +31,9 @@ def make_request(conn,kind,row,system,area,user,batch=None,asset=None,current=No
 def compare_row(conn,row,system,area,user,batch):
     # Serialize imports for a department, including the fingerprint check.
     conn.execute('SELECT pg_advisory_xact_lock(%s)',(system['id'],))
-    link = conn.execute('SELECT l.*,a.main_link_id,a.is_active FROM source_link l JOIN asset a ON a.id=l.asset_id WHERE l.department_system_id=%s AND l.source_id=%s',(system['id'],row['source_id'])).fetchone()
+    link = conn.execute('SELECT l.*,a.main_link_id,a.is_active,a.area_id FROM source_link l JOIN asset a ON a.id=l.asset_id WHERE l.department_system_id=%s AND l.source_id=%s',(system['id'],row['source_id'])).fetchone()
     if link:
+        check_area(conn,user,link['area_id'])
         conn.execute('UPDATE source_link SET last_seen_at=now() WHERE id=%s',(link['id'],))
         conn.execute('UPDATE asset SET last_checked_at=now() WHERE main_link_id=%s',(link['id'],))
         before = link['official_record']
@@ -41,7 +42,7 @@ def compare_row(conn,row,system,area,user,batch):
             return 'same'
         row['link_id'] = link['id']
         row['is_active'] = True
-        return make_request(conn,'update_asset',row,system['id'],area,user,batch,link['asset_id'],before)
+        return make_request(conn,'update_asset',row,system['id'],link['area_id'],user,batch,link['asset_id'],before)
     settings = {r['key']:float(r['value']) for r in conn.execute("SELECT * FROM app_setting WHERE key IN ('match_distance_metres','name_match_score')").fetchall()}
     area_row = check_area(conn,user,area)
     matches = conn.execute('''WITH shape AS (SELECT ST_GeomFromText(%s,4326) AS g)

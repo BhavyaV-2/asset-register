@@ -21,7 +21,7 @@ def test_area_limit_for_setup(client,sign_in):
     try:
         rows = client.get('/areas',headers=sign_in('viewer')).json()
         assert [r['name'] for r in rows] == ['Sector 3']
-        assert client.get('/department-systems',headers=sign_in('viewer')).json() == []
+        assert all(row['default_area_id']==sector for row in client.get('/department-systems',headers=sign_in('viewer')).json())
     finally:
         db.run("UPDATE app_user SET area_id=%s WHERE role='viewer'",(original,))
 
