@@ -39,7 +39,7 @@ Viewer, editor and reviewer cover Gandhinagar city; admin covers all areas. All 
 
 ## Put it online
 
-Website: [Asset Register on Vercel](https://asset-register-pravi.vercel.app). The Render server must still be connected. Follow [DEPLOY_STEPS.md](docs/DEPLOY_STEPS.md), then check [HANDOVER.md](docs/HANDOVER.md) for verified status.
+Website: [Asset Register on Vercel](https://asset-register-pravi.vercel.app). The Render server must still be connected. 
 
 ## Run tests
 
@@ -66,8 +66,7 @@ python server/scripts/run.py make_test_data --count 200000 --yes-this-is-a-test-
 python server/scripts/run.py time_the_map
 ```
 
-Repeat with `--count 2000000` for the stretch run. The generator adds rows up to that count and refuses other database names and non-local addresses. It never removes records. [Measured results](docs/LOAD_TEST_RESULTS.md) include the data size, machine, median and 95th-percentile times, and limits. Designed to grow in steps: see the growth plan.
-
+Repeat with `--count 2000000` for the stretch run. The generator adds rows up to that count and refuses other database names and non-local addresses. It never removes records. 
 ## Folder guide
 
 - `server/app`: rules, imports, review, assets, contracts, photos, map pieces and reports.
