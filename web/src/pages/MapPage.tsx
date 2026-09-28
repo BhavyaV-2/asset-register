@@ -2,6 +2,8 @@ import {useEffect,useRef,useState} from 'react';
 import {Link} from 'react-router-dom';
 import * as maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
+import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
+maplibregl.setWorkerUrl(workerUrl);
 import {base,token,get} from '../api';
 import {text} from '../text';
 import {Heading,Select,useData,Row,Stage,Badges,Notice} from '../common';
