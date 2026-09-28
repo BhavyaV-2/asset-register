@@ -3,8 +3,152 @@ import {useState} from 'react';
 import {send} from '../api';
 import {text} from '../text';
 import {useData,Heading,Notice,DataTable,Select,Row} from '../common';
-const paths:Record<string,string>={areas:'/areas',types:'/asset-types',departments:'/department-systems',users:'/users',settings:'/settings'};
-const fields:Record<string,string[]>={areas:['name','parent_id','level_rank'],types:['name','key','family_id','usual_shape','detail_fields','stages'],departments:['name','department_name','connection','web_address','default_area_id','fixed_asset_type_id','column_mapping','is_full_list','default_stage_key'],users:['email','full_name','password','role','area_id','is_active']};
-const captions:Record<string,string>={name:text.name,parent_id:text.parent,level_rank:text.level,family_id:text.family,detail_fields:text.details,stages:text.stage,department_name:text.department,web_address:text.fetch,default_area_id:text.area,fixed_asset_type_id:text.fixedType,column_mapping:text.mapping,default_stage_key:text.stage,email:text.email,full_name:text.fullName,password:text.password,role:text.role,area_id:text.area,is_active:text.active};
-export default function Admin(){const [tab,setTab]=useState('areas');const {data,error,reload}=useData(paths[tab]);const areas=useData('/areas').data||[];const types=useData('/asset-types').data||[];const levels=useData('/area-levels');const [editing,setEditing]=useState<Row|null>(null);const [failure,setFailure]=useState('');const [strings,setStrings]=useState<Record<string,string>>({});const [levelEdit,setLevelEdit]=useState(false);function edit(row:Row){setEditing({...row});setStrings(Object.fromEntries(Object.entries(row).filter(([,v])=>typeof v==='object').map(([k,v])=>[k,JSON.stringify(v,null,2)])))}function field(key:string){let items:[string,string][]|null=null;if(['area_id','parent_id','default_area_id'].includes(key))items=areas.map((r:Row)=>[String(r.id),r.name]);if(key==='level_rank')items=(levels.data||[]).map((r:Row)=>[String(r.rank),r.name]);if(key==='family_id')items=Array.from(new Map(types.map((r:Row)=>[String(r.family_id),r.family])).entries()) as [string,string][];if(key==='fixed_asset_type_id')items=types.map((r:Row)=>[String(r.id),r.name]);if(key==='role')items=Object.entries(text.roles);if(key==='usual_shape')items=[['point','Point'],['line','Line'],['area','Area']];if(key==='connection')items=[['file',text.file],['web_address',text.fetch]];if(items)return <Select key={key} label={captions[key]||key.replaceAll('_',' ')} value={String(editing?.[key]||'')} onChange={v=>setEditing({...editing,[key]:key.endsWith('_id')||key==='level_rank'?v?Number(v):null:v})} items={items}/>;if(['detail_fields','stages'].includes(key))return <section key={key}><h3>{captions[key]}</h3><TypeFields stages={key==='stages'} value={JSON.parse(strings[key]||'[]')} onChange={v=>setStrings({...strings,[key]:JSON.stringify(v)})}/></section>;if(key==='column_mapping')return <label key={key}>{captions[key]}<textarea className="large-input" value={strings[key]||'[]'} onChange={e=>setStrings({...strings,[key]:e.target.value})}/></label>;if(key.startsWith('is_'))return <label className="check" key={key}><input type="checkbox" checked={!!editing?.[key]} onChange={e=>setEditing({...editing,[key]:e.target.checked})}/>{captions[key]||key.replaceAll('_',' ')}</label>;return <label key={key}>{captions[key]||key.replaceAll('_',' ')}<input type={key==='password'?'password':'text'} value={editing?.[key]||''} onChange={e=>setEditing({...editing,[key]:e.target.value})}/></label>}
-return <><Heading title={text.adminTitle} subtitle={text.adminHelp}/><section className="panel"><div className="tabs">{Object.entries(text.adminTabs).map(([key,value])=><button key={key} className={tab===key?'selected':''} onClick={()=>{setTab(key);setEditing(null);setFailure('')}}>{value}</button>)}</div><Notice error={error||failure}/>{tab==='areas'&&<><button onClick={()=>setLevelEdit(!levelEdit)}>{text.levels}</button>{levelEdit&&<form onSubmit={async e=>{e.preventDefault();const form=new FormData(e.currentTarget);try{await send('/area-levels',(levels.data||[]).map((r:Row)=>({...r,name:form.get(String(r.rank))})),'PUT');levels.reload();setLevelEdit(false)}catch(e){setFailure((e as Error).message)}}}>{(levels.data||[]).map((r:Row)=><label key={r.rank}>{text.level} {r.rank}<input name={String(r.rank)} defaultValue={r.name}/></label>)}<button>{text.save}</button></form>}</>}{tab!=='settings'&&<button onClick={()=>edit(tab==='types'?{detail_fields:[],stages:Object.entries(text.stages).map(([key,label])=>({key,label,is_end:key==='retired'}))}:tab==='departments'?{connection:'file',column_mapping:{},default_stage_key:'in_use'}:{})}>{text.create}</button>}{tab==='settings'?<form onSubmit={async e=>{e.preventDefault();const body=Object.fromEntries(new FormData(e.currentTarget));try{await send('/settings',body,'PATCH');reload()}catch(e){setFailure((e as Error).message)}}}>{(data||[]).filter((r:Row)=>r.key!=='second_person_must_approve').map((r:Row)=><label key={r.key}>{r.key.replaceAll('_',' ')}<input name={r.key} defaultValue={r.value}/></label>)}<p>{text.reviewRule}</p><button>{text.save}</button></form>:<DataTable rows={data||[]} columns={[[text.name,r=>r.name||r.full_name],[text.details,r=>r.role||r.family||r.department_name||r.path],[text.edit,r=><button onClick={()=>edit(r)}>{text.edit}</button>]]}/>}</section>{editing&&<section className="panel"><h2>{editing.id?text.edit:text.create}</h2><p>{text.setupHelp}</p><form onSubmit={async e=>{e.preventDefault();try{const body:Row={};for(const key of fields[tab]){if(editing[key]!==undefined)body[key]=editing[key];if(strings[key])body[key]=JSON.parse(strings[key])}if(editing.id&&tab==='areas')delete body.level_rank;await send(paths[tab]+(editing.id?'/'+editing.id:''),body,editing.id?'PATCH':'POST');setEditing(null);reload();setFailure('')}catch(e){setFailure((e as Error).message)}}}><div className="two-columns">{fields[tab].filter(k=>!editing.id||!['key','email','password','usual_shape','family_id','level_rank'].includes(k)).map(field)}</div><button className="primary">{text.save}</button><button type="button" onClick={()=>setEditing(null)}>{text.cancel}</button></form></section>}</>}
+const paths:Record<string,string>={assets:'/assets',areas:'/areas',types:'/asset-types',departments:'/department-systems',users:'/users',settings:'/settings'};
+const fields:Record<string,string[]>={assets:['name','asset_type_id','area_id','stage_key','is_active'],areas:['name','parent_id','level_rank'],types:['name','key','family_id','usual_shape','detail_fields','stages'],departments:['name','department_name','connection','web_address','default_area_id','fixed_asset_type_id','column_mapping','is_full_list','default_stage_key'],users:['email','full_name','password','role','area_id','is_active']};
+const captions:Record<string,string>={assets:text.assets,name:text.name,asset_type_id:text.type,stage_key:text.stage,parent_id:text.parent,level_rank:text.level,family_id:text.family,detail_fields:text.details,stages:text.stage,department_name:text.department,web_address:text.fetch,default_area_id:text.area,fixed_asset_type_id:text.fixedType,column_mapping:text.mapping,default_stage_key:text.stage,email:text.email,full_name:text.fullName,password:text.password,role:text.role,area_id:text.area,is_active:text.active};
+
+export default function Admin(){
+  const [tab,setTab]=useState('assets');
+  const [assetSearch,setAssetSearch]=useState('');
+  const queryParam=tab==='assets'&&assetSearch?`?q=${encodeURIComponent(assetSearch)}`:'';
+  const {data,error,reload}=useData(paths[tab]+queryParam);
+  const areas=useData('/areas').data||[];
+  const types=useData('/asset-types').data||[];
+  const levels=useData('/area-levels');
+  const [editing,setEditing]=useState<Row|null>(null);
+  const [failure,setFailure]=useState('');
+  const [strings,setStrings]=useState<Record<string,string>>({});
+  const [levelEdit,setLevelEdit]=useState(false);
+
+  function edit(row:Row){
+    setEditing({...row});
+    setStrings(Object.fromEntries(Object.entries(row).filter(([,v])=>typeof v==='object').map(([k,v])=>[k,JSON.stringify(v,null,2)])));
+  }
+
+  function field(key:string){
+    let items:[string,string][]|null=null;
+    if(['area_id','parent_id','default_area_id'].includes(key)) items=areas.map((r:Row)=>[String(r.id),r.name]);
+    if(key==='asset_type_id'||key==='fixed_asset_type_id') items=types.map((r:Row)=>[String(r.id),r.name]);
+    if(key==='stage_key'||key==='default_stage_key') items=Object.entries(text.stages);
+    if(key==='level_rank') items=(levels.data||[]).map((r:Row)=>[String(r.rank),r.name]);
+    if(key==='family_id') items=Array.from(new Map(types.map((r:Row)=>[String(r.family_id),r.family])).entries()) as [string,string][];
+    if(key==='role') items=Object.entries(text.roles);
+    if(key==='usual_shape') items=[['point','Point'],['line','Line'],['area','Area']];
+    if(key==='connection') items=[['file',text.file],['web_address',text.fetch]];
+    if(items) return <Select key={key} label={captions[key]||key.replaceAll('_',' ')} value={String(editing?.[key]||'')} onChange={v=>setEditing({...editing,[key]:key.endsWith('_id')||key==='level_rank'?v?Number(v):null:v})} items={items}/>;
+    if(['detail_fields','stages'].includes(key)) return <section key={key}><h3>{captions[key]}</h3><TypeFields stages={key==='stages'} value={JSON.parse(strings[key]||'[]')} onChange={v=>setStrings({...strings,[key]:JSON.stringify(v)})}/></section>;
+    if(key==='column_mapping') return <label key={key}>{captions[key]}<textarea className="large-input" value={strings[key]||'[]'} onChange={e=>setStrings({...strings,[key]:e.target.value})}/></label>;
+    if(key.startsWith('is_')) return <label className="check" key={key}><input type="checkbox" checked={!!editing?.[key]} onChange={e=>setEditing({...editing,[key]:e.target.checked})}/>{captions[key]||key.replaceAll('_',' ')}</label>;
+    return <label key={key}>{captions[key]||key.replaceAll('_',' ')}<input type={key==='password'?'password':'text'} value={editing?.[key]||''} onChange={e=>setEditing({...editing,[key]:e.target.value})}/></label>;
+  }
+
+  return (
+    <>
+      <Heading title={text.adminTitle} subtitle={text.adminHelp}/>
+      <section className="panel">
+        <div className="tabs">
+          {Object.entries(text.adminTabs).map(([key,value])=>(
+            <button key={key} className={tab===key?'selected':''} onClick={()=>{setTab(key);setEditing(null);setFailure('')}}>{value}</button>
+          ))}
+        </div>
+        <Notice error={error||failure}/>
+
+        {tab==='assets'&& (
+          <div className="filters" style={{marginBottom:'1rem'}}>
+            <label>{text.search}<input value={assetSearch} placeholder="Search code, name, department ID..." onChange={e=>setAssetSearch(e.target.value)}/></label>
+          </div>
+        )}
+
+        {tab==='areas'&& (
+          <>
+            <button onClick={()=>setLevelEdit(!levelEdit)}>{text.levels}</button>
+            {levelEdit&&(
+              <form onSubmit={async e=>{e.preventDefault();const form=new FormData(e.currentTarget);try{await send('/area-levels',(levels.data||[]).map((r:Row)=>({...r,name:form.get(String(r.rank))})),'PUT');levels.reload();setLevelEdit(false)}catch(e){setFailure((e as Error).message)}}}>
+                {(levels.data||[]).map((r:Row)=><label key={r.rank}>{text.level} {r.rank}<input name={String(r.rank)} defaultValue={r.name}/></label>)}
+                <button>{text.save}</button>
+              </form>
+            )}
+          </>
+        )}
+
+        {tab!=='settings'&& (
+          <button className="primary" onClick={()=>edit(
+            tab==='assets'?{asset_type_id:types[0]?.id,area_id:areas[0]?.id,stage_key:'in_use',is_active:true}:
+            tab==='types'?{detail_fields:[],stages:Object.entries(text.stages).map(([key,label])=>({key,label,is_end:key==='retired'}))}:
+            tab==='departments'?{connection:'file',column_mapping:{},default_stage_key:'in_use'}:{}
+          )}>
+            + {text.create} {captions[tab]||tab}
+          </button>
+        )}
+
+        {tab==='settings'?(
+          <form onSubmit={async e=>{e.preventDefault();const body=Object.fromEntries(new FormData(e.currentTarget));try{await send('/settings',body,'PATCH');reload()}catch(e){setFailure((e as Error).message)}}}>
+            {(data||[]).filter((r:Row)=>r.key!=='second_person_must_approve').map((r:Row)=><label key={r.key}>{r.key.replaceAll('_',' ')}<input name={r.key} defaultValue={r.value}/></label>)}
+            <p>{text.reviewRule}</p>
+            <button>{text.save}</button>
+          </form>
+        ):tab==='assets'?(
+          <DataTable
+            rows={data||[]}
+            columns={[
+              [text.code, r => r.register_code],
+              [text.name, r => r.name || text.noName],
+              [text.type, r => r.type || ''],
+              [text.area, r => r.area || ''],
+              [text.stage, r => `${text.stages[r.stage_key] || r.stage_key} ${r.is_active ? '' : '(Inactive)'}`],
+              ['Actions', r => (
+                <div style={{display:'flex',gap:'0.5rem'}}>
+                  <button onClick={()=>edit(r)}>{text.edit}</button>
+                  <a className="button quiet" href={`/assets/${r.id}`}>{text.open}</a>
+                  {r.is_active && (
+                    <button className="danger" onClick={async ()=>{
+                      if(window.confirm(`Deactivate ${r.register_code}?`)){
+                        try{ await send(`/assets/${r.id}`,{},'DELETE'); reload(); }catch(e){ setFailure((e as Error).message); }
+                      }
+                    }}>
+                      {text.deactivate}
+                    </button>
+                  )}
+                </div>
+              )]
+            ]}
+          />
+        ):(
+          <DataTable rows={data||[]} columns={[[text.name,r=>r.name||r.full_name],[text.details,r=>r.role||r.family||r.department_name||r.path],[text.edit,r=><button onClick={()=>edit(r)}>{text.edit}</button>]]}/>
+        )}
+      </section>
+
+      {editing&&(
+        <section className="panel">
+          <h2>{editing.id?`${text.edit} ${editing.register_code||editing.name||''}`:`${text.create} ${captions[tab]||tab}`}</h2>
+          <p>{text.setupHelp}</p>
+          <form onSubmit={async e=>{
+            e.preventDefault();
+            try{
+              const body:Row={};
+              for(const key of fields[tab]){
+                if(editing[key]!==undefined) body[key]=editing[key];
+                if(strings[key]) body[key]=JSON.parse(strings[key]);
+              }
+              if(editing.id&&tab==='areas') delete body.level_rank;
+              await send(paths[tab]+(editing.id?'/'+editing.id:''),body,editing.id?'PATCH':'POST');
+              setEditing(null);
+              reload();
+              setFailure('');
+            }catch(e){
+              setFailure((e as Error).message);
+            }
+          }}>
+            <div className="two-columns">
+              {fields[tab].filter(k=>!editing.id||!['key','email','password','usual_shape','family_id','level_rank'].includes(k)).map(field)}
+            </div>
+            <div style={{display:'flex',gap:'0.5rem',marginTop:'1rem'}}>
+              <button className="primary">{text.save}</button>
+              <button type="button" onClick={()=>setEditing(null)}>{text.cancel}</button>
+            </div>
+          </form>
+        </section>
+      )}
+    </>
+  );
+}

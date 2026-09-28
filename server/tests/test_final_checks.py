@@ -14,6 +14,9 @@ def test_each_write_route_has_a_role_check():
       '/change-requests/approve-many':{'reviewer','admin'},'/change-requests/{request_id}/approve':{'reviewer','admin'},'/change-requests/{request_id}/reject':{'reviewer','admin'},
       '/contracts':{'editor','admin'},'/contracts/{contract_id}':{'editor','admin'},'/assets/{asset_id}/problems':{'editor','admin'},
       '/problems/{problem_id}/close':{'editor','reviewer','admin'},'/warranty-claims/{claim_id}/close':{'editor','reviewer','admin'},
+      '/assets':{'admin'},'/assets/{asset_id}':{'admin'},
+      '/projects':{'editor','admin'},'/projects/{project_id}':{'editor','admin'},
+      '/projects/{project_id}/stages':{'reviewer','admin'},'/projects/{project_id}/assets':{'editor','admin'},'/projects/{project_id}/items':{'editor','admin'},
       '/assets/{asset_id}/notes':{'editor','reviewer','admin'},'/assets/{asset_id}/photos':{'editor','admin'}}
     checked=set()
     for route in app.routes:

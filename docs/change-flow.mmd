@@ -1,0 +1,8 @@
+flowchart TD
+  A["Department file or web address"] --> B["Read and check each row"]
+  B --> C["Compare with the register"]
+  C -->|"New, changed, possible match or missing"| D["Request waits for review"]
+  C -->|"Unchanged"| E["Record the check date"]
+  D --> F{"A different person decides"}
+  F -->|"Approve"| G["Update the register and save history"]
+  F -->|"Reject"| H["Save the reason; keep the register unchanged"]

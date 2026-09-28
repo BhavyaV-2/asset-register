@@ -17,10 +17,10 @@ async def lifespan(app):
     yield
 
 app = FastAPI(title='Asset Register',lifespan=lifespan)
-app.add_middleware(CORSMiddleware,allow_origins=os.getenv('ALLOWED_ORIGINS','http://localhost:5173').split(','),allow_methods=['GET','POST','PATCH','PUT'],allow_headers=['Authorization','Content-Type'],expose_headers=['X-Tile-Trimmed'])
+app.add_middleware(CORSMiddleware,allow_origins=os.getenv('ALLOWED_ORIGINS','http://localhost:5173').split(','),allow_methods=['GET','POST','PATCH','PUT','DELETE'],allow_headers=['Authorization','Content-Type'],expose_headers=['X-Tile-Trimmed'])
 app.include_router(people.router)
-from app import areas, asset_types, department_systems
-for routes in [areas.router, asset_types.router, department_systems.router]:
+from app import areas, asset_types, department_systems, projects
+for routes in [areas.router, asset_types.router, department_systems.router, projects.router]:
     app.include_router(routes)
 from app.imports.routes import router as import_routes
 app.include_router(import_routes)
