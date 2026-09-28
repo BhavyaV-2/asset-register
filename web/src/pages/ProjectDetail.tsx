@@ -53,7 +53,7 @@ export default function ProjectDetail(){
 
       {/* 9-Stage Visual Lifecycle Progress Tracker */}
       <section className="panel">
-        <h2>{text.stage} Progression (v2 Full Lifecycle)</h2>
+        <h2>{text.stage} Progression</h2>
         <div style={{display:'flex',overflowX:'auto',padding:'1rem 0',gap:'0.5rem',alignItems:'center'}}>
           {STAGE_ORDER.map((stageKey,idx)=>{
             const isCurrent = stageKey === project.current_stage_key;
@@ -142,7 +142,7 @@ export default function ProjectDetail(){
 
       {/* Budget & Cost Control */}
       <section className="panel">
-        <h2>{text.budget} & Cost Control (Req #7)</h2>
+        <h2>{text.budget} & Cost Control</h2>
         <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))',gap:'1rem'}}>
           <div className="card">
             <small>{text.budget}</small>
@@ -168,7 +168,7 @@ export default function ProjectDetail(){
       {/* Linked Assets */}
       <section className="panel">
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'1rem'}}>
-          <h2>{text.linkedAssets} (Req #1, #13, #22)</h2>
+          <h2>{text.linkedAssets}</h2>
           {canEdit&&(
             <button onClick={()=>setLinkingAsset(!linkingAsset)}>
               {linkingAsset ? text.cancel : `+ ${text.linkAsset}`}
@@ -227,7 +227,7 @@ export default function ProjectDetail(){
       {/* Items, Risks & Approvals */}
       <section className="panel">
         <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'1rem'}}>
-          <h2>{text.projectItems} (Req #3, #4, #6, #10, #18)</h2>
+          <h2>{text.projectItems}</h2>
           {canEdit&&(
             <button onClick={()=>setAddingItem(!addingItem)}>
               {addingItem ? text.cancel : `+ ${text.addItem}`}
@@ -297,7 +297,7 @@ export default function ProjectDetail(){
 
       {/* Stage History */}
       <section className="panel">
-        <h2>{text.stageHistory} (Req #2, #11)</h2>
+        <h2>{text.stageHistory}</h2>
         <DataTable
           rows={project.history||[]}
           columns={[

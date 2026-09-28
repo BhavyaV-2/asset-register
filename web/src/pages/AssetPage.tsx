@@ -126,7 +126,7 @@ export default function AssetPage(){
 
       {asset.projects&&asset.projects.length>0&&(
         <section className="panel">
-          <h2>Linked Projects (v2 Lifecycle)</h2>
+          <h2>Linked Projects</h2>
           <DataTable
             rows={asset.projects}
             columns={[
