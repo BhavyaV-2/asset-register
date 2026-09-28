@@ -1,0 +1,2301 @@
+[
+  {
+    "family": "Roads and Bridges",
+    "key": "road",
+    "name": "Road",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "road_class",
+        "label": "Road class",
+        "kind": "choice",
+        "choices": [
+          "national highway",
+          "state highway",
+          "district road",
+          "city road",
+          "village road",
+          "lane"
+        ]
+      },
+      {
+        "key": "surface",
+        "label": "Surface",
+        "kind": "choice",
+        "choices": [
+          "asphalt",
+          "concrete",
+          "paving blocks",
+          "gravel",
+          "earth",
+          "other"
+        ]
+      },
+      {
+        "key": "width_m",
+        "label": "Width m",
+        "kind": "number"
+      },
+      {
+        "key": "lanes",
+        "label": "Lanes",
+        "kind": "number"
+      },
+      {
+        "key": "has_footpath",
+        "label": "Has footpath",
+        "kind": "yes_no"
+      },
+      {
+        "key": "has_divider",
+        "label": "Has divider",
+        "kind": "yes_no"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Roads and Bridges",
+    "key": "bridge",
+    "name": "Bridge or Flyover",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "bridge_kind",
+        "label": "Bridge kind",
+        "kind": "choice",
+        "choices": [
+          "bridge",
+          "flyover",
+          "underpass",
+          "foot overbridge"
+        ]
+      },
+      {
+        "key": "length_m",
+        "label": "Length m",
+        "kind": "number"
+      },
+      {
+        "key": "span_count",
+        "label": "Span count",
+        "kind": "number"
+      },
+      {
+        "key": "material",
+        "label": "Material",
+        "kind": "choice",
+        "choices": [
+          "concrete",
+          "steel",
+          "stone",
+          "other"
+        ]
+      },
+      {
+        "key": "load_limit_tons",
+        "label": "Load limit tons",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Roads and Bridges",
+    "key": "culvert",
+    "name": "Culvert",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "culvert_kind",
+        "label": "Culvert kind",
+        "kind": "choice",
+        "choices": [
+          "pipe",
+          "box",
+          "slab"
+        ]
+      },
+      {
+        "key": "opening_width_m",
+        "label": "Opening width m",
+        "kind": "number"
+      },
+      {
+        "key": "material",
+        "label": "Material",
+        "kind": "choice",
+        "choices": [
+          "concrete",
+          "stone",
+          "steel",
+          "other"
+        ]
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Roads and Bridges",
+    "key": "footpath",
+    "name": "Footpath or Cycle Track",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "track_kind",
+        "label": "Track kind",
+        "kind": "choice",
+        "choices": [
+          "footpath",
+          "cycle track",
+          "both"
+        ]
+      },
+      {
+        "key": "surface",
+        "label": "Surface",
+        "kind": "choice",
+        "choices": [
+          "asphalt",
+          "concrete",
+          "paving blocks",
+          "gravel",
+          "earth",
+          "other"
+        ]
+      },
+      {
+        "key": "width_m",
+        "label": "Width m",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Roads and Bridges",
+    "key": "traffic_signal",
+    "name": "Traffic Signal",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "arm_count",
+        "label": "Arm count",
+        "kind": "number"
+      },
+      {
+        "key": "power_source",
+        "label": "Power source",
+        "kind": "choice",
+        "choices": [
+          "grid",
+          "solar"
+        ]
+      },
+      {
+        "key": "year_installed",
+        "label": "Year installed",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Roads and Bridges",
+    "key": "bus_shelter",
+    "name": "Bus Shelter",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "seats",
+        "label": "Seats",
+        "kind": "number"
+      },
+      {
+        "key": "has_lighting",
+        "label": "Has lighting",
+        "kind": "yes_no"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Transport and Logistics",
+    "key": "transport_hub",
+    "name": "Transport Station or Terminal",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "hub_kind",
+        "label": "Hub kind",
+        "kind": "choice",
+        "choices": [
+          "bus station",
+          "railway station",
+          "metro station",
+          "ferry terminal",
+          "airport",
+          "port"
+        ]
+      },
+      {
+        "key": "platforms_or_gates",
+        "label": "Platforms or gates",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Transport and Logistics",
+    "key": "storage_facility",
+    "name": "Warehouse or Cold Store",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "storage_kind",
+        "label": "Storage kind",
+        "kind": "choice",
+        "choices": [
+          "warehouse",
+          "cold store",
+          "container depot"
+        ]
+      },
+      {
+        "key": "capacity_tonnes",
+        "label": "Capacity tonnes",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "water_pipeline",
+    "name": "Water Pipeline",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "pipe_kind",
+        "label": "Pipe kind",
+        "kind": "choice",
+        "choices": [
+          "main",
+          "distribution",
+          "service"
+        ]
+      },
+      {
+        "key": "diameter_mm",
+        "label": "Diameter mm",
+        "kind": "number"
+      },
+      {
+        "key": "material",
+        "label": "Material",
+        "kind": "choice",
+        "choices": [
+          "cast iron",
+          "ductile iron",
+          "PVC",
+          "HDPE",
+          "steel",
+          "concrete",
+          "other"
+        ]
+      },
+      {
+        "key": "year_laid",
+        "label": "Year laid",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "water_treatment",
+    "name": "Water Treatment Plant",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "capacity_mld",
+        "label": "Capacity mld",
+        "kind": "number"
+      },
+      {
+        "key": "treatment_kind",
+        "label": "Treatment kind",
+        "kind": "choice",
+        "choices": [
+          "filtration",
+          "chlorination only",
+          "other"
+        ]
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "water_tank",
+    "name": "Water Tank",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "tank_kind",
+        "label": "Tank kind",
+        "kind": "choice",
+        "choices": [
+          "overhead",
+          "ground level",
+          "underground sump"
+        ]
+      },
+      {
+        "key": "capacity_litres",
+        "label": "Capacity litres",
+        "kind": "number"
+      },
+      {
+        "key": "height_m",
+        "label": "Height m",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "pump_station",
+    "name": "Pumping Station or Borewell",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "pump_kind",
+        "label": "Pump kind",
+        "kind": "choice",
+        "choices": [
+          "borewell",
+          "pumping station",
+          "booster station"
+        ]
+      },
+      {
+        "key": "power_kw",
+        "label": "Power kw",
+        "kind": "number"
+      },
+      {
+        "key": "year_installed",
+        "label": "Year installed",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "sewer_line",
+    "name": "Sewer Line",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "diameter_mm",
+        "label": "Diameter mm",
+        "kind": "number"
+      },
+      {
+        "key": "material",
+        "label": "Material",
+        "kind": "choice",
+        "choices": [
+          "cast iron",
+          "ductile iron",
+          "PVC",
+          "HDPE",
+          "steel",
+          "concrete",
+          "other"
+        ]
+      },
+      {
+        "key": "year_laid",
+        "label": "Year laid",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "sewage_treatment",
+    "name": "Sewage Treatment Plant",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "capacity_mld",
+        "label": "Capacity mld",
+        "kind": "number"
+      },
+      {
+        "key": "treatment_kind",
+        "label": "Treatment kind",
+        "kind": "choice",
+        "choices": [
+          "primary",
+          "secondary",
+          "advanced",
+          "other"
+        ]
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "storm_drain",
+    "name": "Storm Water Drain",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "drain_kind",
+        "label": "Drain kind",
+        "kind": "choice",
+        "choices": [
+          "open",
+          "covered",
+          "box"
+        ]
+      },
+      {
+        "key": "width_m",
+        "label": "Width m",
+        "kind": "number"
+      },
+      {
+        "key": "depth_m",
+        "label": "Depth m",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "canal",
+    "name": "Irrigation Canal",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "canal_kind",
+        "label": "Canal kind",
+        "kind": "choice",
+        "choices": [
+          "main canal",
+          "branch canal",
+          "distributary",
+          "field channel"
+        ]
+      },
+      {
+        "key": "lined",
+        "label": "Lined",
+        "kind": "yes_no"
+      },
+      {
+        "key": "width_m",
+        "label": "Width m",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "dam_embankment",
+    "name": "Dam or Embankment",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "structure_kind",
+        "label": "Structure kind",
+        "kind": "choice",
+        "choices": [
+          "dam",
+          "embankment",
+          "check dam"
+        ]
+      },
+      {
+        "key": "height_m",
+        "label": "Height m",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "waste_facility",
+    "name": "Solid Waste Facility",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "facility_kind",
+        "label": "Facility kind",
+        "kind": "choice",
+        "choices": [
+          "transfer station",
+          "processing plant",
+          "landfill",
+          "compost site"
+        ]
+      },
+      {
+        "key": "capacity_tonnes_per_day",
+        "label": "Capacity tonnes per day",
+        "kind": "number"
+      },
+      {
+        "key": "year_started",
+        "label": "Year started",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "public_toilet",
+    "name": "Public Toilet",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "seat_count",
+        "label": "Seat count",
+        "kind": "number"
+      },
+      {
+        "key": "has_water",
+        "label": "Has water",
+        "kind": "yes_no"
+      },
+      {
+        "key": "has_power",
+        "label": "Has power",
+        "kind": "yes_no"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Water and Sanitation",
+    "key": "waste_point",
+    "name": "Waste Collection Point",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "point_kind",
+        "label": "Point kind",
+        "kind": "choice",
+        "choices": [
+          "bin",
+          "container",
+          "collection yard"
+        ]
+      },
+      {
+        "key": "capacity_litres",
+        "label": "Capacity litres",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Energy and Street Lighting",
+    "key": "street_light",
+    "name": "Street Light",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "pole_height_m",
+        "label": "Pole height m",
+        "kind": "number"
+      },
+      {
+        "key": "lamp_kind",
+        "label": "Lamp kind",
+        "kind": "choice",
+        "choices": [
+          "LED",
+          "sodium vapour",
+          "CFL",
+          "other"
+        ]
+      },
+      {
+        "key": "watts",
+        "label": "Watts",
+        "kind": "number"
+      },
+      {
+        "key": "power_source",
+        "label": "Power source",
+        "kind": "choice",
+        "choices": [
+          "grid",
+          "solar"
+        ]
+      },
+      {
+        "key": "year_installed",
+        "label": "Year installed",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Energy and Street Lighting",
+    "key": "substation",
+    "name": "Substation or Transformer",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "equipment_kind",
+        "label": "Equipment kind",
+        "kind": "choice",
+        "choices": [
+          "substation",
+          "transformer"
+        ]
+      },
+      {
+        "key": "capacity_kva",
+        "label": "Capacity kva",
+        "kind": "number"
+      },
+      {
+        "key": "voltage_kv",
+        "label": "Voltage kv",
+        "kind": "number"
+      },
+      {
+        "key": "year_installed",
+        "label": "Year installed",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Energy and Street Lighting",
+    "key": "power_line",
+    "name": "Power Line",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "voltage_kv",
+        "label": "Voltage kv",
+        "kind": "number"
+      },
+      {
+        "key": "line_kind",
+        "label": "Line kind",
+        "kind": "choice",
+        "choices": [
+          "overhead",
+          "underground"
+        ]
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Energy and Street Lighting",
+    "key": "solar_plant",
+    "name": "Solar Installation",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "capacity_kw",
+        "label": "Capacity kw",
+        "kind": "number"
+      },
+      {
+        "key": "install_kind",
+        "label": "Install kind",
+        "kind": "choice",
+        "choices": [
+          "rooftop",
+          "ground mounted",
+          "street pole"
+        ]
+      },
+      {
+        "key": "year_installed",
+        "label": "Year installed",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Energy and Street Lighting",
+    "key": "fuel_pipeline",
+    "name": "Oil or Gas Pipeline",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "fuel_kind",
+        "label": "Fuel kind",
+        "kind": "choice",
+        "choices": [
+          "oil",
+          "natural gas",
+          "LNG",
+          "other"
+        ]
+      },
+      {
+        "key": "diameter_mm",
+        "label": "Diameter mm",
+        "kind": "number"
+      },
+      {
+        "key": "year_laid",
+        "label": "Year laid",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Communication",
+    "key": "telecom_tower",
+    "name": "Telecom Tower",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "tower_kind",
+        "label": "Tower kind",
+        "kind": "choice",
+        "choices": [
+          "ground based",
+          "rooftop",
+          "pole"
+        ]
+      },
+      {
+        "key": "height_m",
+        "label": "Height m",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Communication",
+    "key": "cable_route",
+    "name": "Communication Cable Route",
+    "usual_shape": "line",
+    "detail_fields": [
+      {
+        "key": "cable_kind",
+        "label": "Cable kind",
+        "kind": "choice",
+        "choices": [
+          "optical fibre",
+          "duct only",
+          "copper"
+        ]
+      },
+      {
+        "key": "year_laid",
+        "label": "Year laid",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Buildings and Social Facilities",
+    "key": "government_building",
+    "name": "Government Office Building",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "building_use",
+        "label": "Building use",
+        "kind": "choice",
+        "choices": [
+          "office",
+          "court",
+          "police station",
+          "other"
+        ]
+      },
+      {
+        "key": "floors",
+        "label": "Floors",
+        "kind": "number"
+      },
+      {
+        "key": "floor_area_sqm",
+        "label": "Floor area sqm",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Buildings and Social Facilities",
+    "key": "school",
+    "name": "School or College",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "education_level",
+        "label": "Education level",
+        "kind": "choice",
+        "choices": [
+          "primary",
+          "secondary",
+          "higher secondary",
+          "college",
+          "training centre"
+        ]
+      },
+      {
+        "key": "classrooms",
+        "label": "Classrooms",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Buildings and Social Facilities",
+    "key": "hospital",
+    "name": "Hospital or Health Centre",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "health_kind",
+        "label": "Health kind",
+        "kind": "choice",
+        "choices": [
+          "hospital",
+          "community health centre",
+          "primary health centre",
+          "clinic"
+        ]
+      },
+      {
+        "key": "beds",
+        "label": "Beds",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Buildings and Social Facilities",
+    "key": "housing",
+    "name": "Housing Complex",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "housing_kind",
+        "label": "Housing kind",
+        "kind": "choice",
+        "choices": [
+          "affordable housing",
+          "rental housing",
+          "staff quarters"
+        ]
+      },
+      {
+        "key": "homes",
+        "label": "Homes",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Buildings and Social Facilities",
+    "key": "sports_facility",
+    "name": "Sports Facility",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "sports_kind",
+        "label": "Sports kind",
+        "kind": "choice",
+        "choices": [
+          "stadium",
+          "playground",
+          "swimming pool",
+          "indoor hall"
+        ]
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Buildings and Social Facilities",
+    "key": "market",
+    "name": "Market or Shopping Complex",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "shops",
+        "label": "Shops",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Buildings and Social Facilities",
+    "key": "community_hall",
+    "name": "Community Hall or Centre",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "capacity_people",
+        "label": "Capacity people",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Spaces and Safety",
+    "key": "park",
+    "name": "Park or Garden",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "has_lighting",
+        "label": "Has lighting",
+        "kind": "yes_no"
+      },
+      {
+        "key": "has_play_equipment",
+        "label": "Has play equipment",
+        "kind": "yes_no"
+      },
+      {
+        "key": "year_opened",
+        "label": "Year opened",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Spaces and Safety",
+    "key": "fire_station",
+    "name": "Fire Station",
+    "usual_shape": "point",
+    "detail_fields": [
+      {
+        "key": "bays",
+        "label": "Bays",
+        "kind": "number"
+      },
+      {
+        "key": "year_built",
+        "label": "Year built",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  },
+  {
+    "family": "Public Spaces and Safety",
+    "key": "burial_ground",
+    "name": "Burial Ground or Crematorium",
+    "usual_shape": "area",
+    "detail_fields": [
+      {
+        "key": "ground_kind",
+        "label": "Ground kind",
+        "kind": "choice",
+        "choices": [
+          "burial ground",
+          "crematorium",
+          "both"
+        ]
+      },
+      {
+        "key": "year_started",
+        "label": "Year started",
+        "kind": "number"
+      }
+    ],
+    "stages": [
+      {
+        "key": "planned",
+        "label": "Planned",
+        "is_end": false
+      },
+      {
+        "key": "being_built",
+        "label": "Being built",
+        "is_end": false
+      },
+      {
+        "key": "in_use",
+        "label": "In use",
+        "is_end": false
+      },
+      {
+        "key": "needs_repair",
+        "label": "Needs repair",
+        "is_end": false
+      },
+      {
+        "key": "under_repair",
+        "label": "Under repair",
+        "is_end": false
+      },
+      {
+        "key": "retired",
+        "label": "Retired",
+        "is_end": true
+      }
+    ]
+  }
+]
