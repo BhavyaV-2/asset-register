@@ -1,0 +1,9 @@
+.venv/
+.env
+node_modules/
+dist/
+__pycache__/
+.pytest_cache/
+*.zip
+.local/
+*.log
