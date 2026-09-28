@@ -26,6 +26,9 @@ from app.imports.routes import router as import_routes
 app.include_router(import_routes)
 from app import review
 app.include_router(review.router)
+from app import contracts, problems
+app.include_router(contracts.router)
+app.include_router(problems.router)
 
 @app.exception_handler(HTTPException)
 async def handle_error(request, error):
