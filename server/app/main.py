@@ -41,6 +41,11 @@ async def handle_error(request, error):
 async def handle_input(request, error):
     return JSONResponse({'message':'Check the supplied fields and try again.'},status_code=422)
 
+@app.exception_handler(KeyError)
+@app.exception_handler(ValueError)
+async def handle_missing_input(request,error):
+    return JSONResponse({'message':'Check the supplied fields and try again.'},status_code=400)
+
 @app.exception_handler(IntegrityError)
 @app.exception_handler(DataError)
 async def handle_database_input(request, error):

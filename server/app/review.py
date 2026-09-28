@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from app import database as db
-from app.people import read_user, need_role, area_limit, check_area
+from app.people import read_user, need_role, area_limit, check_area, check_asset
 from app.apply_changes import apply_request, write_history
 
 router = APIRouter()
@@ -25,7 +25,12 @@ def get_request(conn,user,request_id,lock=False):
 @router.get('/change-requests/{request_id}')
 def request_page(request_id:int,user=Depends(read_user)):
     with db.transaction() as conn:
-        return get_request(conn,user,request_id)
+        row=get_request(conn,user,request_id)
+        if row['proposed'].get('geometry_wkt'):
+            row['proposed_shape']=conn.execute('SELECT ST_AsGeoJSON(ST_GeomFromText(%s,4326))::json AS shape',(row['proposed']['geometry_wkt'],)).fetchone()['shape']
+        for candidate in row.get('match_candidates') or []:
+            candidate['shape']=check_asset(conn,user,candidate['asset_id'])['shape']
+        return row
 
 def decide_request(request_id,body,user,approve=True,conn=None):
     if conn is None:

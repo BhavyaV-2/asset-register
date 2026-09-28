@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import HTMLResponse
 from psycopg.types.json import Jsonb
 from app import database as db
-from app.people import read_user, need_role, area_limit, check_asset
+from app.people import read_user, need_role, area_limit, check_asset, check_area
 from app.settings import today
 from app.apply_changes import write_history
 
@@ -26,8 +26,12 @@ def report_problem(asset_id:str,body:dict,user=Depends(need_role('editor','admin
         return row
 
 @router.get('/problems')
-def list_problems(status:str|None=None,under_warranty:bool|None=None,user=Depends(read_user)):
-    return db.all('SELECT p.*,a.register_code,a.name FROM problem_report p JOIN asset a ON a.id=p.asset_id JOIN area r ON r.id=a.area_id WHERE r.path LIKE %s AND (%s::text IS NULL OR p.status=%s) AND (%s::boolean IS NULL OR p.under_warranty=%s) ORDER BY p.id DESC',(area_limit(user)+'%',status,status,under_warranty,under_warranty))
+def list_problems(status:str|None=None,under_warranty:bool|None=None,area_id:int|None=None,user=Depends(read_user)):
+    prefix=area_limit(user)
+    if area_id:
+        with db.transaction() as conn:
+            prefix=check_area(conn,user,area_id)['path']
+    return db.all("SELECT p.*,a.register_code,a.name FROM problem_report p JOIN asset a ON a.id=p.asset_id JOIN area r ON r.id=a.area_id WHERE r.path LIKE %s AND (%s::text IS NULL OR p.status=%s OR (%s='active' AND p.status<>'closed')) AND (%s::boolean IS NULL OR p.under_warranty=%s) ORDER BY p.id DESC",(prefix+'%',status,status,status,under_warranty,under_warranty))
 
 @router.get('/warranty-claims')
 def list_claims(user=Depends(read_user)):

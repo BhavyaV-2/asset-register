@@ -40,7 +40,7 @@ def asset_page(asset_id:str,user=Depends(read_user)):
         row['links']=conn.execute('SELECT l.*,d.name AS system FROM source_link l JOIN department_system d ON d.id=l.department_system_id WHERE l.asset_id=%s ORDER BY l.is_main DESC,l.id',(asset_id,)).fetchall()
         row['contracts']=conn.execute('SELECT c.* FROM contract c JOIN contract_asset ca ON ca.contract_id=c.id WHERE ca.asset_id=%s',(asset_id,)).fetchall()
         row['problems']=conn.execute('SELECT * FROM problem_report WHERE asset_id=%s ORDER BY id DESC',(asset_id,)).fetchall()
-        row['photos']=conn.execute('SELECT id,created_at,taken_lat,taken_lon FROM photo WHERE asset_id=%s ORDER BY id DESC',(asset_id,)).fetchall()
+        row['photos']=conn.execute('SELECT p.id,p.created_at,p.taken_lat,p.taken_lon,CASE WHEN p.taken_lat IS NOT NULL THEN round(ST_Distance(ST_SetSRID(ST_Point(p.taken_lon,p.taken_lat),4326)::geography,a.location::geography)) END AS distance_m FROM photo p JOIN asset a ON a.id=p.asset_id WHERE p.asset_id=%s ORDER BY p.id DESC',(asset_id,)).fetchall()
         row['notes']=conn.execute('SELECT n.*,u.full_name FROM asset_note n JOIN app_user u ON u.id=n.user_id WHERE n.asset_id=%s ORDER BY n.id DESC',(asset_id,)).fetchall()
         return row
 

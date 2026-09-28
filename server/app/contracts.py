@@ -51,6 +51,8 @@ def propose_contract(body,user,contract_id=None):
         if not ids:
             raise HTTPException(400,'Choose at least one asset for this contract.')
         assets = [check_asset(conn,user,item) for item in sorted(set(ids))]
+        if len({asset['area_id'] for asset in assets})!=1:
+            raise HTTPException(400,'Choose assets in one area for each contract request.')
         months = int(body['warranty_months'])
         if not 0<=months<=1200:
             raise HTTPException(400,'Use a warranty from 0 to 1,200 months.')
