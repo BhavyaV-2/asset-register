@@ -25,7 +25,7 @@ Sample loader: 508 assets, three contracts, four problems, one waiting warranty 
 Tests used Python 3.12 with real PostgreSQL 16 and PostGIS in Ubuntu under Windows.
 
 ```text
-59 passed, 1 warning in 32.71s
+59 passed, 1 warning in 27.65s
 Test Files  1 passed (1)
 Tests  17 passed (17)
 ```
@@ -101,3 +101,13 @@ Extracted ZIP check passed: clean database, 508 sample assets, health, four sign
 ```
 
 That extraction was checked before the last map-display refinements; the archive is regenerated from the final sources. No dependency folders or environment secrets are included.
+
+The extracted website passed `npm ci` and `npm run build` (`✓ built in 8.77s`). Its install reported dependency advisories; the already-required libraries were updated before the final package. Final checks:
+
+```text
+found 0 vulnerabilities
+✓ built in 3.91s
+Test Files  1 passed (1)
+Tests  17 passed (17)
+11 role/menu/page checks passed; both diagrams loaded; browser errors: 0.
+```

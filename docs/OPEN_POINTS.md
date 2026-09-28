@@ -19,3 +19,4 @@
 - Load measurements — fixed-seed sequential local requests with empty-map counts reported — repeatable evidence without implying tested concurrent capacity — judges.
 - Bucket photos — standard S3 signed requests without an extra package — no client library was specified — operator.
 - Local setup — generate random values in ignored environment files — avoids committed passwords and another environment-file package — operator.
+- Package versions — use patched releases of the specified libraries, including MapLibre 6 and React Router 7 — the documents specify those libraries without fixing their versions, and the clean install identified advisories in earlier releases — maintainer.
