@@ -6,3 +6,11 @@
 - Demo sign-in — role selection still uses email and password, with an environment-controlled demo password displayed only in demo mode — keep the settled sign-in method and the user's requested role demo — user.
 - Asset catalog — use all 37 listed types; the exact split is our own and has not been checked against Gujarat or Pravi — the five source categories follow the Government of India list and municipal types follow common lists, such as Ahmedabad's — Pravi.
 - Sign-in attempt counts — held in server memory and reset on restart — specified single-server approach — operator.
+- Demo password display — SHOW_DEMO_SIGN_INS must be explicitly true — displaying the environment password is requested for the demo, so the default is off — operator.
+- Shared setup — only an admin with all-area access changes global types, levels and settings — these changes affect every area — Pravi.
+- Bad rows and missing detection — do not make missing requests when any row failed — an unreadable row could contain a known asset — Pravi.
+- Fetch redirects — refuse them; check every resolved address and connect to the checked address — keeps private-address blocking simple — operator.
+- Geometry distances — use local metres in UTM zone 43 for shape comparisons — the sample and load-test locations are in Gujarat — Pravi before use outside this region.
+- Equal warranty end dates — choose the newest contract ID — the documents do not choose between ties — Pravi.
+- Second picture — save the change flow as a second SVG — SVG has no document pages — judges.
+- Database test runtime — PostgreSQL 16 and PostGIS in local Ubuntu — Docker was installed without usable integration here — operator.
