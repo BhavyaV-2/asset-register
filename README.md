@@ -73,7 +73,6 @@ Repeat with `--count 2000000` for the stretch run. The generator adds rows up to
 - `server/db`: database changes, all 37 asset types, and made-up samples.
 - `server/tests`: tests against PostGIS.
 - `web/src`: React pages, shared words and plain CSS.
-- `docs`: specifications, diagrams, results, choices and handover.
 
 ## Not in version 1
 
