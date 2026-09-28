@@ -1,5 +1,0 @@
-flowchart LR
-  W["Website · Vercel<br/>Viewers, editors, reviewers and admins<br/>Map, lists and review screens"] -->|"Secure requests"| S["Server · Render<br/>Checks access, reads files<br/>and applies approved changes"]
-  S -->|"Read and save"| D[("Database · Render<br/>Assets, contracts, photos<br/>and protected history")]
-  X["Department systems<br/>Keep the official records"] -.->|"File or web address · read only"| S
-  style X stroke-dasharray: 6 5
