@@ -1,0 +1,1013 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-1",
+        "name": "Sample water pipeline 1",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.61,
+            23.195
+          ],
+          [
+            72.615,
+            23.196
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-2",
+        "name": "Sample water pipeline 2",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.618,
+            23.195
+          ],
+          [
+            72.62299999999999,
+            23.196
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-3",
+        "name": "Sample water pipeline 3",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.626,
+            23.195
+          ],
+          [
+            72.631,
+            23.196
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-4",
+        "name": "Sample water pipeline 4",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.634,
+            23.195
+          ],
+          [
+            72.639,
+            23.196
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-5",
+        "name": "Sample water pipeline 5",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.642,
+            23.195
+          ],
+          [
+            72.64699999999999,
+            23.196
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-6",
+        "name": "Sample water pipeline 6",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.65,
+            23.195
+          ],
+          [
+            72.655,
+            23.196
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-7",
+        "name": "Sample water pipeline 7",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.658,
+            23.195
+          ],
+          [
+            72.663,
+            23.196
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-8",
+        "name": "Sample water pipeline 8",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.666,
+            23.195
+          ],
+          [
+            72.67099999999999,
+            23.196
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-9",
+        "name": "Sample water pipeline 9",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.61,
+            23.201
+          ],
+          [
+            72.615,
+            23.202
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-10",
+        "name": "Sample water pipeline 10",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.618,
+            23.201
+          ],
+          [
+            72.62299999999999,
+            23.202
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-11",
+        "name": "Sample water pipeline 11",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.626,
+            23.201
+          ],
+          [
+            72.631,
+            23.202
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-12",
+        "name": "Sample water pipeline 12",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.634,
+            23.201
+          ],
+          [
+            72.639,
+            23.202
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-13",
+        "name": "Sample water pipeline 13",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.642,
+            23.201
+          ],
+          [
+            72.64699999999999,
+            23.202
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-14",
+        "name": "Sample water pipeline 14",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.65,
+            23.201
+          ],
+          [
+            72.655,
+            23.202
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-15",
+        "name": "Sample water pipeline 15",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.658,
+            23.201
+          ],
+          [
+            72.663,
+            23.202
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-16",
+        "name": "Sample water pipeline 16",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.666,
+            23.201
+          ],
+          [
+            72.67099999999999,
+            23.202
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-17",
+        "name": "Sample water pipeline 17",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.61,
+            23.207
+          ],
+          [
+            72.615,
+            23.208000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-18",
+        "name": "Sample water pipeline 18",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.618,
+            23.207
+          ],
+          [
+            72.62299999999999,
+            23.208000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-19",
+        "name": "Sample water pipeline 19",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.626,
+            23.207
+          ],
+          [
+            72.631,
+            23.208000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-20",
+        "name": "Sample water pipeline 20",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.634,
+            23.207
+          ],
+          [
+            72.639,
+            23.208000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-21",
+        "name": "Sample water pipeline 21",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.642,
+            23.207
+          ],
+          [
+            72.64699999999999,
+            23.208000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-22",
+        "name": "Sample water pipeline 22",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.65,
+            23.207
+          ],
+          [
+            72.655,
+            23.208000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-23",
+        "name": "Sample water pipeline 23",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.658,
+            23.207
+          ],
+          [
+            72.663,
+            23.208000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-24",
+        "name": "Sample water pipeline 24",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.666,
+            23.207
+          ],
+          [
+            72.67099999999999,
+            23.208000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-25",
+        "name": "Sample water pipeline 25",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.61,
+            23.213
+          ],
+          [
+            72.615,
+            23.214000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-26",
+        "name": "Sample water pipeline 26",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.618,
+            23.213
+          ],
+          [
+            72.62299999999999,
+            23.214000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-27",
+        "name": "Sample water pipeline 27",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.626,
+            23.213
+          ],
+          [
+            72.631,
+            23.214000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-28",
+        "name": "Sample water pipeline 28",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.634,
+            23.213
+          ],
+          [
+            72.639,
+            23.214000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-29",
+        "name": "Sample water pipeline 29",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.642,
+            23.213
+          ],
+          [
+            72.64699999999999,
+            23.214000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-30",
+        "name": "Sample water pipeline 30",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.65,
+            23.213
+          ],
+          [
+            72.655,
+            23.214000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-31",
+        "name": "Sample water pipeline 31",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.658,
+            23.213
+          ],
+          [
+            72.663,
+            23.214000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-32",
+        "name": "Sample water pipeline 32",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.666,
+            23.213
+          ],
+          [
+            72.67099999999999,
+            23.214000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-33",
+        "name": "Sample water pipeline 33",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.61,
+            23.219
+          ],
+          [
+            72.615,
+            23.220000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-34",
+        "name": "Sample water pipeline 34",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.618,
+            23.219
+          ],
+          [
+            72.62299999999999,
+            23.220000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-35",
+        "name": "Sample water pipeline 35",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.626,
+            23.219
+          ],
+          [
+            72.631,
+            23.220000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-36",
+        "name": "Sample water pipeline 36",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.634,
+            23.219
+          ],
+          [
+            72.639,
+            23.220000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-37",
+        "name": "Sample water pipeline 37",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.642,
+            23.219
+          ],
+          [
+            72.64699999999999,
+            23.220000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-38",
+        "name": "Sample water pipeline 38",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.65,
+            23.219
+          ],
+          [
+            72.655,
+            23.220000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-39",
+        "name": "Sample water pipeline 39",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.658,
+            23.219
+          ],
+          [
+            72.663,
+            23.220000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-40",
+        "name": "Sample water pipeline 40",
+        "kind": "pipeline",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            72.666,
+            23.219
+          ],
+          [
+            72.67099999999999,
+            23.220000000000002
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-41",
+        "name": "Sample water tank 41",
+        "kind": "tank",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.61,
+          23.225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-42",
+        "name": "Sample water tank 42",
+        "kind": "tank",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.618,
+          23.225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-43",
+        "name": "Sample water tank 43",
+        "kind": "tank",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.626,
+          23.225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-44",
+        "name": "Sample water tank 44",
+        "kind": "tank",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.634,
+          23.225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-45",
+        "name": "Sample water tank 45",
+        "kind": "tank",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.642,
+          23.225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-46",
+        "name": "Sample water tank 46",
+        "kind": "tank",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.65,
+          23.225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-47",
+        "name": "Sample water plant 47",
+        "kind": "plant",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.658,
+          23.225
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "WATER-48",
+        "name": "Sample water plant 48",
+        "kind": "plant",
+        "_sample": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          72.666,
+          23.225
+        ]
+      }
+    }
+  ]
+}
